@@ -94,6 +94,7 @@ namespace TD
             //MonsterManager.DEBUGPrintPath(batch);
             MonsterManager.Draw(batch);
             ProjectileManager.Draw(batch);
+            ParticleEngine.Draw(batch);
 
 
 

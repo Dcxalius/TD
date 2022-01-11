@@ -176,6 +176,18 @@
 /processorParam:TextureFormat=Color
 /build:healthbar.png
 
+#begin human.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:human.png
+
 #begin ItemSlots.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -427,4 +439,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:UnpressedButton.png
+
+#begin wave.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:wave.png
 

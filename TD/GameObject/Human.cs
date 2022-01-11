@@ -7,21 +7,21 @@ using Spline;
 
 namespace TD
 {
-    class Goblin : Monster
+    class Human : Monster
     {
         const int GFXSize = 50;
-        const int framesOfAnimation = 4;
-        public Goblin(SimplePath aPath) : base (aPath, new Point(GFXSize), framesOfAnimation)
+        const int framesOfAnimation = 2;
+        public Human(SimplePath aPath) : base (aPath, new Point(GFXSize), framesOfAnimation)
         {
 
-            gfx = TextureManager.goblin;
-            level = RandomManager.random.Next(1, 4);
-            maxHealth = 10 + level * 5f;
+            gfx = TextureManager.human;
+            level = RandomManager.random.Next(2, 5);
+            maxHealth = 8 + level * 5f;
             health = maxHealth;
             armor = 0.10f;
             money = 3 + level * 2;
 
-            lootRank = 1;
+            lootRank = 2;
         }
     }
 }

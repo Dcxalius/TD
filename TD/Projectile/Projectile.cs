@@ -38,6 +38,7 @@ namespace TD
                 {
                     if (currentMessage.type[(int)Item.Type.Rocket] > 0)
                     {
+                        ParticleEngine.nodes.Add(new RocketNode(position));
                         foreach (Monster monster in MonsterManager.GetMonstersInSplash(targetPosition, currentMessage.type[(int)Item.Type.Rocket]))
                         {
                             monster.AddDamageMessage(currentMessage);

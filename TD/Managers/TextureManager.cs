@@ -8,7 +8,7 @@ namespace TD
 
         public static Texture2D baseTower, uiBackground, pressedButton, unpressedButton, buildTower, background, foreground, gORBackground, road, goblin
             , arrow, rocket, freezeArrow, multiArrow, snipeArrow, superArrow, statusbar, statusbarNumbers, healthbar, selectedTower, targetedItem, 
-            dataBox, towerButtonEmblem, damageButtonEmblem, rangeButtonEmblem, attackSpeedButtonEmblem, coinPurse, sniperEmblem, rocketEmblem, multishotEmblem, freezeEmblem, superEmblem, itemSlots;
+            dataBox, towerButtonEmblem, damageButtonEmblem, rangeButtonEmblem, attackSpeedButtonEmblem, coinPurse, sniperEmblem, rocketEmblem, multishotEmblem, freezeEmblem, superEmblem, itemSlots, human, wave;
         public static SpriteFont font;
 
 
@@ -49,6 +49,8 @@ namespace TD
             superEmblem = aContentManager.Load<Texture2D>("superEmblem");
             itemSlots = aContentManager.Load<Texture2D>("itemSlots");
             targetedItem = aContentManager.Load<Texture2D>("TargetedItem");
+            human = aContentManager.Load<Texture2D>("Human");
+            wave = aContentManager.Load<Texture2D>("Wave");
         }
     }
 }

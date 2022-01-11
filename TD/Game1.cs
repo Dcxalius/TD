@@ -9,8 +9,11 @@ namespace TD
         public const int StartMoney = 150;
         public const bool Cheats = true;
 
+        public static Game1 self;
+
         public Game1()
         {
+            self = this;
             GraphicsDeviceManager graphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
@@ -28,7 +31,8 @@ namespace TD
         }
         protected override void Update(GameTime gameTime)
         {
-            StateManager.Update(gameTime);
+            Data.UpdateGameTime(gameTime);
+            StateManager.Update();
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)

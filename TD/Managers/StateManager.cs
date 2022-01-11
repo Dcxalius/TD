@@ -22,7 +22,7 @@ namespace TD
 
         }
 
-        public static void Update(GameTime gameTime)
+        public static void Update()
         {
             InputManager.Update();
             UI.Update();
@@ -52,6 +52,7 @@ namespace TD
             TowerManager.Update();
             MonsterManager.Update();
             Inventory.Update();
+            ParticleEngine.Update();
 
             if (Game1.Cheats == true)
             {

@@ -108,7 +108,7 @@ namespace TD
 
                 if (damageMessages[0].type[(int)Item.Type.Freeze] > 0)
                 {
-                    AddFrostStack();
+                    AddFrostStack((int) (damageMessages[0].type[(int)Item.Type.Freeze] / Data.gameTime.ElapsedGameTime.TotalSeconds));
 
                 }
                 damageMessages.RemoveAt(0);
@@ -130,8 +130,11 @@ namespace TD
                 drawRectangle = animationDrawRectangles[currentAnimationFrame];
             }
 
-            progress += speed;
-
+            progress += speed * ConsumeFrostStack();
+            if (progress >= path.endT)
+            {
+                Game1.self.Exit();
+            }
             
             
             base.Update(path.GetPos(progress));
@@ -156,6 +159,28 @@ namespace TD
             {
                 frostStacks.Add(aDurationInFrames);
             }
+        }
+
+        float ConsumeFrostStack()
+        {
+            int count = frostStacks.Count;
+            for (int i = frostStacks.Count - 1; i >= 0; i--)
+            {
+                frostStacks[i]--;
+                if (frostStacks[i] <= 0)
+                {
+                    frostStacks.RemoveAt(i);
+                }
+            }
+
+            if (frostStacks.Count != 0)
+            {
+                for (int i = 0; i < Math.Ceiling(frostStacks.Count / 10f); i++)
+                {
+                    ParticleEngine.nodes.Add(new FrostNode(position));
+                }
+            }
+            return 1f - count / 100f;
         }
 
         public void DrawStatusBar(SpriteBatch aBatch)

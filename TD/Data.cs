@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,6 +46,13 @@ namespace TD
             price = (int)(price * 1.6f);
 
             return true;
+        }
+
+        public static GameTime gameTime;
+
+        public static void UpdateGameTime(GameTime aGameTime)
+        {
+            gameTime = aGameTime;
         }
     }
 }

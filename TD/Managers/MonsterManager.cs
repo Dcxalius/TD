@@ -11,9 +11,10 @@ namespace TD
     static class MonsterManager
     {
         static List<Monster> monsters = new List<Monster>();
+
         static SimplePath simplePath = new SimplePath(GFXManager.graphicsDeviceManager.GraphicsDevice);
-        static int framesBetweenSpawn = 60 * 3;
-        static int framesSinceLastSpawn = framesBetweenSpawn;
+        static int framesBetweenSpawn = 60 * 5;
+        static int framesSinceSpawn = framesBetweenSpawn;
 
         public static void InitPath()
         {
@@ -37,12 +38,23 @@ namespace TD
 
         public static void Update()
         {
-            framesSinceLastSpawn++;
+            framesSinceSpawn++;
 
-            if (framesSinceLastSpawn >= framesBetweenSpawn)
+            if (framesSinceSpawn >= framesBetweenSpawn)
             {
-                framesSinceLastSpawn = 0;
-                monsters.Add(new Goblin(simplePath));
+                framesSinceSpawn = 0;
+                if (RandomManager.random.NextDouble() > 0.3)
+                {
+                    monsters.Add(new Goblin(simplePath));
+                }
+                else if (RandomManager.random.NextDouble() > 0.3)
+                {
+                    monsters.Add(new Human(simplePath));
+                }
+                else
+                {
+                    monsters.Add(new Wave(simplePath));
+                }
             }
 
             for (int i = monsters.Count - 1; i >= 0; i--)
