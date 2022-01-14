@@ -118,7 +118,11 @@ namespace TD
             SetGfx(aType);
             rank = aRank;
             Init();
-            itemData[(int)aType].RefreshItemData(amountOfTypes[(int) aType], rank);
+            for (int i = 0; i < (int)Type.Count; i++)
+            {
+                itemData[i].RefreshItemData(amountOfTypes[i], rank);
+
+            }
         }
 
         public Item(Item aItem, Item anItem)
@@ -162,7 +166,7 @@ namespace TD
             id = GetId;
             offset = gfx.Bounds.Size.ToVector2() / 2;
             drawRectangle = new Rectangle(Point.Zero, gfx.Bounds.Size);
-            itemData.Add(new Data(0, 0, 100, "radius"));
+            itemData.Add(new Data(0, 0, 55, "radius"));
             itemData.Add(new Data(1, 1, 0.1f, "sec slow"));
             itemData.Add(new Data(1, 1, 0.5f, "* crit dmg"));
         }
@@ -173,7 +177,7 @@ namespace TD
             {
                 if (StateManager.currentState == StateManager.GameState.Game)
                 {
-                    if (Inventory.mergeSwitch == true && UI.targetItem.rank == rank)
+                    if (Inventory.mergeSwitch == true && UI.targetItem.rank == rank && UI.targetItem.ID != ID)
                     {
                         Inventory.RemoveItem(this);
                         Inventory.AddItemToInventory(new Item(UI.targetItem, this));

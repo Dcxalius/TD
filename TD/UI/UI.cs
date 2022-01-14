@@ -69,6 +69,10 @@ namespace TD
                     releasedItem = true;
                 }
             }
+            if (targetItem == null && targetTower == null && dataButtons.Count == 0)
+            {
+                dataButtons.Add(new LevelUpButton(new Vector2(TextureManager.unpressedButton.Width / 2, GFXManager.ScreenHeight - (int)Tower.AttackDataType.count * 50 - 40)));
+            }
         }
 
         public static void TargetNewItem(Item aItem)

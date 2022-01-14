@@ -10,7 +10,7 @@ namespace TD
     {
         public MergeButton(Vector2 aPosition) : base(aPosition)
         {
-            emblemGfx = TextureManager.towerButtonEmblem;
+            emblemGfx = TextureManager.mergeEmblem;
         }
 
         override protected void Pressed()

@@ -8,7 +8,7 @@ namespace TD
 
         public static Texture2D baseTower, uiBackground, pressedButton, unpressedButton, buildTower, background, foreground, gORBackground, road, goblin
             , arrow, rocket, freezeArrow, multiArrow, snipeArrow, superArrow, statusbar, statusbarNumbers, healthbar, selectedTower, targetedItem, 
-            dataBox, towerButtonEmblem, damageButtonEmblem, rangeButtonEmblem, attackSpeedButtonEmblem, coinPurse, sniperEmblem, rocketEmblem, multishotEmblem, freezeEmblem, superEmblem, itemSlots, human, wave;
+            dataBox, sellEmblem, mergeEmblem, levelUpEmblem, towerButtonEmblem, damageButtonEmblem, rangeButtonEmblem, attackSpeedButtonEmblem, coinPurse, sniperEmblem, rocketEmblem, multishotEmblem, freezeEmblem, superEmblem, itemSlots, human, wave;
         public static SpriteFont font;
 
 
@@ -45,7 +45,10 @@ namespace TD
             sniperEmblem = aContentManager.Load<Texture2D>("sniperEmblem");
             rocketEmblem = aContentManager.Load<Texture2D>("rocketEmblem");
             multishotEmblem = aContentManager.Load<Texture2D>("multishotEmblem");
+            sellEmblem = aContentManager.Load<Texture2D>("SellEmblem");
+            levelUpEmblem = aContentManager.Load<Texture2D>("LevelUpEmblem");
             freezeEmblem = aContentManager.Load<Texture2D>("freezeEmblem");
+            mergeEmblem = aContentManager.Load<Texture2D>("mergeemblem");
             superEmblem = aContentManager.Load<Texture2D>("superEmblem");
             itemSlots = aContentManager.Load<Texture2D>("itemSlots");
             targetedItem = aContentManager.Load<Texture2D>("TargetedItem");

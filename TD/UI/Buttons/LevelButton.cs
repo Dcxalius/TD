@@ -6,17 +6,16 @@ using System.Text;
 
 namespace TD
 {
-    class SellButton : SingleClickButton
+    class LevelUpButton : SingleClickButton
     {
-        public SellButton(Vector2 aPosition) : base(aPosition)
+        public LevelUpButton(Vector2 aPosition) : base(aPosition)
         {
-            emblemGfx = TextureManager.sellEmblem;
+            emblemGfx = TextureManager.levelUpEmblem;
         }
 
         override protected void Pressed()
         {
-            Player.AddMoney(UI.targetItem.ItemData[(int)UI.targetItem.GetAnyActive].price);
-            Inventory.RemoveItem(UI.targetItem);
+            Monster.LevelUp();
             framesSinceClick = 0;
             base.Pressed();
         }
@@ -24,7 +23,7 @@ namespace TD
         public override void Draw(SpriteBatch aBatch)
         {
             base.Draw(aBatch);
-            DrawPrice(aBatch, UI.targetItem.ItemData[(int)UI.targetItem.GetAnyActive].price);
+            DrawPrice(aBatch, (int) Monster.LevelPrice);
         }
     }
 }

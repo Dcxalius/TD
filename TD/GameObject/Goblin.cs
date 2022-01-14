@@ -15,7 +15,7 @@ namespace TD
         {
 
             gfx = TextureManager.goblin;
-            level = RandomManager.random.Next(1, 4);
+            level = RandomManager.random.Next(1, 4) + LevelsBought;
             maxHealth = 10 + level * 5f;
             health = maxHealth;
             armor = 0.10f;

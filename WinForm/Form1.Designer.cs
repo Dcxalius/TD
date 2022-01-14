@@ -34,7 +34,6 @@ namespace WinForm
             this.input = new System.Windows.Forms.NumericUpDown();
             this.RocketAdder = new System.Windows.Forms.Button();
             this.FreezeAdder = new System.Windows.Forms.Button();
-            this.MultiAdder = new System.Windows.Forms.Button();
             this.SnipeAdder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.input)).BeginInit();
             this.SuspendLayout();
@@ -96,16 +95,6 @@ namespace WinForm
             this.FreezeAdder.UseVisualStyleBackColor = true;
             this.FreezeAdder.Click += new System.EventHandler(this.AddFreezeToWishList);
             // 
-            // MultiAdder
-            // 
-            this.MultiAdder.Location = new System.Drawing.Point(19, 174);
-            this.MultiAdder.Name = "MultiAdder";
-            this.MultiAdder.Size = new System.Drawing.Size(54, 52);
-            this.MultiAdder.TabIndex = 6;
-            this.MultiAdder.Text = "Multi";
-            this.MultiAdder.UseVisualStyleBackColor = true;
-            this.MultiAdder.Click += new System.EventHandler(this.AddMultiToWishList);
-            // 
             // SnipeAdder
             // 
             this.SnipeAdder.Location = new System.Drawing.Point(19, 232);
@@ -122,7 +111,6 @@ namespace WinForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(276, 380);
             this.Controls.Add(this.SnipeAdder);
-            this.Controls.Add(this.MultiAdder);
             this.Controls.Add(this.FreezeAdder);
             this.Controls.Add(this.RocketAdder);
             this.Controls.Add(this.input);
@@ -144,7 +132,6 @@ namespace WinForm
         private System.Windows.Forms.NumericUpDown input;
         private System.Windows.Forms.Button RocketAdder;
         private System.Windows.Forms.Button FreezeAdder;
-        private System.Windows.Forms.Button MultiAdder;
         private System.Windows.Forms.Button SnipeAdder;
     }
 }

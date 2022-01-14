@@ -11,8 +11,29 @@ namespace TD
    
     abstract class Monster : MovingObject
     {
-        protected SimplePath path;
+        static private int levelsBought = 0;
+        static public int LevelsBought
+        {
+            get => levelsBought;
+        }
+        static private float levelPrice = 50;
+        static public float LevelPrice
+        {
+            get => levelPrice;
+        }
 
+        static public void LevelUp()
+        {
+            if (Player.CanBuy(levelPrice) == false)
+            {
+                return;
+            }
+            levelsBought++;
+            levelPrice *= 2f;
+        }
+
+        protected SimplePath path;
+        
         protected float maxHealth;
         protected float health;
         private float uArmor;

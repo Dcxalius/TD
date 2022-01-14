@@ -86,7 +86,6 @@ namespace WinForm
         private void AddMultiToWishList(object sender, EventArgs e)
         {
             multsToAdd += 1;
-            MultiAdder.Text = multsToAdd.ToString();
         }
 
         private void AddSnipeToWishList(object sender, EventArgs e)
